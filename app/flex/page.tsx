@@ -1,5 +1,5 @@
-import { Flex } from "@/components/Flex";
-import { Layout } from "@/components/Layout";
+import { Flex } from "@/components/contents/Flex";
+import { Layout } from "@/components/core/Layout";
 
 export default function FlexPage() {
   return (

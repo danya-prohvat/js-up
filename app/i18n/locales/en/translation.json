@@ -1,5 +1,8 @@
 {
     "flex": {
         "title": "Flexbox CSS Cheat Sheet"
+    },
+    "grid": {
+        "title": "Grid CSS Cheat Sheet"
     }
 }

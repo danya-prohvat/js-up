@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from './header.module.css'
-import { LangToggler } from "../LangToggler";
+import { LangToggler } from "@components/core/LangToggler";
 
 export const Header = () => {
     return (

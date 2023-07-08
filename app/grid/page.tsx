@@ -1,5 +1,5 @@
-import { Grid } from "@/components/Grid";
-import { Layout } from "@/components/Layout";
+import { Grid } from "@/components/contents/Grid";
+import { Layout } from "@/components/core/Layout";
 
 export default function GridPage() {
   return (
