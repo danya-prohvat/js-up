@@ -1,0 +1,18 @@
+.footer {
+  background-color: #000000;
+}
+
+.footerContainer {
+  margin: 0 auto;
+  max-width: 1170px;
+
+  padding-top: 34px;
+  padding-bottom: 34px;
+
+  text-align: center;
+}
+
+.footerH2 {
+  color: #fff;
+  font-size: 18px;
+}
