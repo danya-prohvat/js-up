@@ -1,8 +1,12 @@
 'use client'
 
-import { IRule } from "@types/types";
 import { FC, useState } from "react";
 import styles from './rule.module.css'
+
+type IRule = {
+    property: string
+    values: string[]
+}
 
 export const Rule: FC<IRule> = ({property, values}) => {
     const [currentRule, setCurrentRule] = useState(0);
