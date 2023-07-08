@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from './header.module.css'
+import { LangToggler } from "../LangToggler";
 
 export const Header = () => {
     return (
@@ -9,7 +10,7 @@ export const Header = () => {
                 <nav className={styles.headerNav}>
                     <Link className={styles.headerNavLink} href="/flex">Flex</Link>
                     <Link className={styles.headerNavLink} href="/grid">Grid</Link>
-                    <div className={styles.headerNavLang}></div>
+                    <LangToggler />
                 </nav>
             </div>
         </header>
