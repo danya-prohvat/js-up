@@ -11,7 +11,7 @@ export const Grid = async () => {
         <>
             <Title title={t('grid.title')} />
             {gridData.map((rule, idx) => 
-                <Rule key={idx} {...rule} />
+                <Rule mark='grid' key={idx} {...rule} />
             )}
         </>
     );

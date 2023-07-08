@@ -12,7 +12,7 @@ export const Flex = async () => {
             <Title title={t('flex.title')} />
         
             {flexData.map((rule, idx) => 
-                <Rule key={idx} {...rule} />
+                <Rule mark='flex' key={idx} {...rule} />
             )}
         </>
     );
