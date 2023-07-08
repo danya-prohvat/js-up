@@ -1,5 +1,9 @@
+import { Layout } from "@/components/Layout";
+
 export default function FlexPage() {
   return (
-    <>FLEX</>
+    <Layout>
+      FLEX
+    </Layout>
   )
 }

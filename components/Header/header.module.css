@@ -1,13 +1,37 @@
 .header {
-  background-color: #010001;
+  background-color: #000000;
 }
 
 .headerContainer {
+  margin: 0 auto;
+  max-width: 1170px;
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .headerH1 {
   color: #fff;
+  font-size: 38px;
 }
 
 .headerNav {
+  display: flex;
+}
+
+.headerNavLink {
+  color: #fff;
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.headerNavLang{
+  width: 60px;
+  height: 20px;
+  background-color: red;
+  margin-left: 45px;
 }
