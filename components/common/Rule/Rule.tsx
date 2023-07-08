@@ -27,11 +27,13 @@ export const Rule: FC<IRule> = ({property, values, mark}) => {
                 )}
             </ul>
             <div className={styles.code}>
-                <div style={{display: mark, [property]: values[currentRule]}} className={styles.codePlayground}>
-                    <div className={styles.codePlaygroundBlock}>1</div>
-                    <div className={styles.codePlaygroundBlock}>2</div>
-                    <div className={styles.codePlaygroundBlock}>3</div>
-                    <div className={styles.codePlaygroundBlock}>4</div>
+                <div className={styles.codePlayground}>
+                    <div style={{display: mark, [property]: values[currentRule]}} className={styles.parent}>
+                        <div className={styles.codePlaygroundBlock}>1</div>
+                        <div className={styles.codePlaygroundBlock}>2</div>
+                        <div className={styles.codePlaygroundBlock}>3</div>
+                        <div className={styles.codePlaygroundBlock}>4</div>
+                    </div>
                 </div>
                 <div className={styles.codeExample}></div>
             </div>
