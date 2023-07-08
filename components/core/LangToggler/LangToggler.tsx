@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslation } from '@/app/i18n/client';
+import { useTranslation } from '@app/i18n/client';
 import styles from './langToggler.module.css'
 
 export const LangToggler = () => {

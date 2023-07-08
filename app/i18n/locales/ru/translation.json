@@ -1,5 +1,8 @@
 {
     "flex": {
         "title": "Шпаргалка по Flexbox CSS"
+    },
+    "grid": {
+        "title": "Шпаргалка по Grid CSS"
     }
 }
