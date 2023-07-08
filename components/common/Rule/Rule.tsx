@@ -12,6 +12,10 @@ type IRule = {
 export const Rule: FC<IRule> = ({property, values, mark}) => {
     const [currentRule, setCurrentRule] = useState(0);
 
+    const copyButton = () => {
+        console.log(`${property}: ${values[currentRule]};`)
+    }
+
     useEffect(() => {
         console.log(currentRule)
     }, [currentRule])
@@ -35,7 +39,15 @@ export const Rule: FC<IRule> = ({property, values, mark}) => {
                         <div className={styles.codePlaygroundBlock}>4</div>
                     </div>
                 </div>
-                <div className={styles.codeExample}></div>
+                <div className={styles.codeExample}>
+                    <code className={styles.code}>
+                        {'.parent {'} <br />
+                        &nbsp; {property}: {values[currentRule]}; <br />
+                        {' }'} <br />
+
+                        <div onClick={copyButton} className={styles.codeCopy}></div>
+                    </code>
+                </div>
             </div>
         </div>
     );
