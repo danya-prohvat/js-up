@@ -1,5 +1,9 @@
+import { Layout } from "@/components/Layout";
+
 export default function GridPage() {
   return (
-    <>GRID</>
+    <Layout>
+      GRID
+    </Layout>
   )
 }
