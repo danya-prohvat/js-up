@@ -1,10 +1,11 @@
 import Link from "next/link";
+import styles from './header.module.css'
 
 export const Header = () => {
     return (
-        <header>
+        <header className={styles.header}>
             <div>
-                <h1>JS UP</h1>
+                <h1 className={styles.headerH1}>JS UP</h1>
                 <nav>
                     <Link href="/flex">Flex</Link>
                     <Link href="/grid">Grid</Link>
