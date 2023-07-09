@@ -2,14 +2,16 @@
 
 import { FC, useEffect, useState } from "react";
 import styles from './rule.module.css'
+import { Code } from "./Code";
 
 type IRule = {
     property: string
     values: string[]
+    styles: any
     mark: 'flex' | 'grid'
 }
 
-export const Rule: FC<IRule> = ({property, values, mark}) => {
+export const Rule: FC<IRule> = ({property, values, mark, styles: styleList}) => {
     const [currentRule, setCurrentRule] = useState(0);
 
     const copyButton = () => {
@@ -33,17 +35,36 @@ export const Rule: FC<IRule> = ({property, values, mark}) => {
             <div className={styles.code}>
                 <div className={styles.codePlayground}>
                     <div style={{display: mark, [property]: values[currentRule]}} className={styles.parent}>
-                        <div className={styles.codePlaygroundBlock}>1</div>
-                        <div className={styles.codePlaygroundBlock}>2</div>
-                        <div className={styles.codePlaygroundBlock}>3</div>
-                        <div className={styles.codePlaygroundBlock}>4</div>
+                        {mark === 'flex' ? <>
+                            <div className={styles.codePlaygroundBlock}>1</div>
+                            <div className={styles.codePlaygroundBlock}>2</div>
+                            <div className={styles.codePlaygroundBlock}>3</div>
+                            <div className={styles.codePlaygroundBlock}>4</div>
+                        </> : <>
+                            <div className={styles.codePlaygroundBlock}>1</div>
+                            <div className={styles.codePlaygroundBlock}>2</div>
+                            <div className={styles.codePlaygroundBlock}>3</div>
+                            <div className={styles.codePlaygroundBlock}>4</div>
+                            <div className={styles.codePlaygroundBlock}>5</div>
+                            <div className={styles.codePlaygroundBlock}>6</div>
+                            <div className={styles.codePlaygroundBlock}>7</div>
+                            <div className={styles.codePlaygroundBlock}>8</div>
+                            <div className={styles.codePlaygroundBlock}>9</div>
+                        </>}
                     </div>
                 </div>
                 <div className={styles.codeExample}>
                     <code className={styles.code}>
-                        {'.parent {'} <br />
-                        &nbsp; {property}: {values[currentRule]}; <br />
-                        {' }'} <br />
+
+                        {styleList.parent.length ?                       
+                            <Code value={values[currentRule]} property={property} styleGroup='parent' styles={styleList.parent} />
+                        : ''}
+                        {styleList.child.length ?
+                            <Code value={values[currentRule]} property={property} styleGroup='child' styles={styleList.child} />
+                        : ''}
+                        {styleList.childActive.length ? 
+                            <Code value={values[currentRule]} property={property} styleGroup='childActive' styles={styleList.childActive} />
+                        : ''}
 
                         <div onClick={copyButton} className={styles.codeCopy}></div>
                     </code>

@@ -1,11 +1,11 @@
 export const gridData = [
     { 
         property: 'display', 
-        values: ['grid', 'inline-grid', 'subgrid'] 
+        values: ['grid', 'inline-grid', 'subgrid'],
     },
     { 
         property: 'grid-template-columns', 
-        values: ['100px 50px 100px', '50px 1fr 50px', 'repeat(3, 80px)'] 
+        values: ['100px 50px 100px', '50px 1fr 50px', 'repeat(3, 80px)'],
     },
     { 
         property: 'grid-template-rows', 
