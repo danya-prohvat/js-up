@@ -3,6 +3,8 @@
 import { FC, useEffect, useState } from "react";
 import styles from './rule.module.css'
 import { Code } from "./Code";
+import copyIcon from '@assets/imgs/copy-icon.png';
+import Image from "next/image";
 
 type IRule = {
     property: string
@@ -54,7 +56,7 @@ export const Rule: FC<IRule> = ({property, values, mark, styles: styleList}) => 
                     </div>
                 </div>
                 <div className={styles.codeExample}>
-                    <code className={styles.code}>
+                    <code className={styles.codeTag}>
 
                         {styleList.parent.length ?                       
                             <Code value={values[currentRule]} property={property} styleGroup='parent' styles={styleList.parent} />
@@ -66,7 +68,9 @@ export const Rule: FC<IRule> = ({property, values, mark, styles: styleList}) => 
                             <Code value={values[currentRule]} property={property} styleGroup='childActive' styles={styleList.childActive} />
                         : ''}
 
-                        <div onClick={copyButton} className={styles.codeCopy}></div>
+                        <div onClick={copyButton} className={styles.codeCopy}>
+                            <Image src={copyIcon} width={28} height={28} alt="copy icon"/>
+                        </div>
                     </code>
                 </div>
             </div>

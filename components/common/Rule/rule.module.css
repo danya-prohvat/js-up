@@ -39,7 +39,7 @@
 }
 
 .codePlayground{
-  height: 200px;
+  height: 300px;
   width: 48%;
 
   border: 2px solid #4fc3f7;
@@ -62,7 +62,7 @@
 }
 
 .codeExample{
-  height: 200px;
+  height: 300px;
   width: 48%;
 
   background-color: #444;
@@ -80,11 +80,26 @@
 .codeCopy{
   width: 40px;
   height: 40px;
+  position: absolute;
+  padding: 6px;
 
   background-color: #4fc3f7;
 
   cursor: pointer;
 
-  margin-top: 10px;
-  margin-right: 10px;
+  right: 10px;
+  top: 10px;
+}
+
+.codeTag{
+  position: relative;
+}
+
+.codeComponent{
+  font-size: 18px !important;
+  display: block;
+}
+
+.spanMain {
+  background-color: #4fc3f7;
 }
