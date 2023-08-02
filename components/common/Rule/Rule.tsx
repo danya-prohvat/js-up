@@ -20,6 +20,38 @@ export const Rule: FC<IRule> = ({property, values, mark, styles: styleList}) => 
         navigator.clipboard.writeText(`${property}: ${values[currentRule]};`)
     }
 
+    const mainStylesObj = {}
+    const mainStyles = styleList.parent.filter((style: any) => !style.main)
+    mainStyles.forEach((item: any) => {
+        //@ts-ignore
+        mainStylesObj[item.style] = item.value
+    })
+
+    const childActiveStylesObj = {}
+    const childActiveStyles = styleList.childActive.filter((style: any) => !style.main)
+    childActiveStyles.forEach((item: any) => {
+        //@ts-ignore
+        childActiveStylesObj[item.style] = item.value
+    })
+
+    const childStylesObj = {}
+    const childStyles = styleList.child.filter((style: any) => !style.main)
+    childStyles.forEach((item: any) => {
+        //@ts-ignore
+        childStylesObj[item.style] = item.value
+    })
+
+    const parentStyle = {}
+    const childStyle = {}
+    const childActiveStyle = {}
+
+    //@ts-ignore
+    if (styleList.parent.some(style => style.main)) parentStyle[property] = values[currentRule]
+    //@ts-ignore
+    if (styleList.child.some(style => style.main)) childStyle[property] = values[currentRule]
+    //@ts-ignore
+    if (styleList.childActive.some(style => style.main)) childActiveStyle[property] = values[currentRule]
+
     return (
         <div className={styles.rule}>
             <h2 className={styles.ruleH2}>{property}</h2>
@@ -32,22 +64,22 @@ export const Rule: FC<IRule> = ({property, values, mark, styles: styleList}) => 
             </ul>
             <div className={styles.code}>
                 <div className={styles.codePlayground}>
-                    <div style={{display: mark, [property]: values[currentRule]}} className={styles.parent}>
+                    <div style={{...mainStylesObj, ...parentStyle}} className={styles.parent}>
                         {mark === 'flex' ? <>
-                            <div className={styles.codePlaygroundBlock}>1</div>
-                            <div className={styles.codePlaygroundBlock}>2</div>
-                            <div className={styles.codePlaygroundBlock}>3</div>
-                            <div className={styles.codePlaygroundBlock}>4</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>1</div>
+                            <div style={{...childActiveStylesObj, ...childStylesObj, ...childActiveStyle}} className={styles.codePlaygroundBlock}>2</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>3</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>4</div>
                         </> : <>
-                            <div className={styles.codePlaygroundBlock}>1</div>
-                            <div className={styles.codePlaygroundBlock}>2</div>
-                            <div className={styles.codePlaygroundBlock}>3</div>
-                            <div className={styles.codePlaygroundBlock}>4</div>
-                            <div className={styles.codePlaygroundBlock}>5</div>
-                            <div className={styles.codePlaygroundBlock}>6</div>
-                            <div className={styles.codePlaygroundBlock}>7</div>
-                            <div className={styles.codePlaygroundBlock}>8</div>
-                            <div className={styles.codePlaygroundBlock}>9</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>1</div>
+                            <div style={{...childActiveStylesObj, ...childStylesObj, ...childActiveStyle}} className={styles.codePlaygroundBlock}>2</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>3</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>4</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>5</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>6</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>7</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>8</div>
+                            <div style={{...childStylesObj, ...childStyle}} className={styles.codePlaygroundBlock}>9</div>
                         </>}
                     </div>
                 </div>
