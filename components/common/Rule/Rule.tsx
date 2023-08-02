@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import styles from './rule.module.css'
 import { Code } from "./Code";
 import copyIcon from '@assets/imgs/copy-icon.png';
@@ -17,12 +17,8 @@ export const Rule: FC<IRule> = ({property, values, mark, styles: styleList}) => 
     const [currentRule, setCurrentRule] = useState(0);
 
     const copyButton = () => {
-        console.log(`${property}: ${values[currentRule]};`)
+        navigator.clipboard.writeText(`${property}: ${values[currentRule]};`)
     }
-
-    useEffect(() => {
-        console.log(currentRule)
-    }, [currentRule])
 
     return (
         <div className={styles.rule}>
@@ -69,7 +65,7 @@ export const Rule: FC<IRule> = ({property, values, mark, styles: styleList}) => 
                         : ''}
 
                         <div onClick={copyButton} className={styles.codeCopy}>
-                            <Image src={copyIcon} width={28} height={28} alt="copy icon"/>
+                            <Image src={copyIcon} width={30} height={30} alt="copy icon"/>
                         </div>
                     </code>
                 </div>

@@ -29,6 +29,10 @@
   font-size: 20px;
 }
 
+.headerNavLink_active {
+  background-color: rgb(184, 178, 178);
+}
+
 .headerNavLang{
   width: 60px;
   height: 20px;
