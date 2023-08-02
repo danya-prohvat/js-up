@@ -5,6 +5,7 @@ export const gridData = [
         styles: {
             parent: [
                 {main: true},
+                {style: 'grid-template', value: '50px 50px 50px / 50px 50px 50px', main: false},
             ],
             child: [],
             childActive: []
@@ -28,6 +29,8 @@ export const gridData = [
         styles: {
             parent: [
                 {style: 'display', value: 'grid', main: false},
+                {style: 'grid-template-columns', value: 'repeat(3, 50px)', main: false},
+                {style: 'height', value: '250px', main: false},
                 {main: true},
             ],
             child: [],

@@ -49,8 +49,8 @@ export const flexData = [
                 {style: 'height', value: '100%', main: false},
             ],
             child: [
-                {style: 'width', value: '100%', main: false},
-                {style: 'height', value: '100%', main: false},
+                {style: 'width', value: '40%', main: false},
+                {style: 'height', value: '40%', main: false},
             ],
             childActive: []
         }
